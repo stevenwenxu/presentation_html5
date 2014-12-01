@@ -198,9 +198,13 @@
 							[].forEach.call(submits, function(sub) {
 								sub.onclick = function() {
 									var input = sub.previousElementSibling;
+									var val = input.value;
+									var parent = sub.parentNode;
 									if(input.checkValidity()) {
-										sub.style = "visibility: hidden";
-										sub.parentNode.innerHTML += input.value;
+										// sub.style = "visibility: hidden";
+										parent.removeChild(sub);
+										parent.removeChild(input);
+										parent.innerHTML += val;
 										return false;
 									}
 								}
