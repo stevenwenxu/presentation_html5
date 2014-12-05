@@ -72,56 +72,71 @@
             </section>
 
             <section>
+               
+
                <section>
                   <h2>New APIs</h2>
-                  <h4>Cross Browser Solution</h4>
-                  <video width="640" height="480" controls >
-                     <source src="files/big_buck_bunny_trailer.mp4" type="video/mp4">
-                        Your browser does not support the video tag
+                  <h4>Interaction to the next level</h4>
+                  <div class="old">
+                     <div>The old way</div>
+                     <input type="file" id="files" name="files[]" multiple />
+                     <output id="list"></output>
+                     <script src="js/select4.js">
+                     </script>
+                  </div>
+                  <div class="new">
+                     <div>The HTML5 Way</div>
+                     <div id="drop_zone">Drop files here</div>
+                     <output id="newlist"></output>
+                     <script src="js/select5.js"></script>
+                  </div>
+
+               </section>
+
+               <section>
+                  <h2>New APIs</h2>
+                  <h4>Better Performance</h4>
+                  <canvas id="mycanvas">
+                     Your browser doesn't support canvas...
+                  </canvas>
+                  <br>
+                  <button id="paper_btn">drawPaper</button>
+                  <button id="gradient_btn">drawGradient</button>
+                  <button id="radial_btn">drawRadial</button>
+                  <button id="cat_btn">drawCat</button>
+                  <button id="manycat_btn">drawManyCats</button>
+                  <script src="js/canvas.js"></script>
+               </section>
+
+               <section>
+                  <h2 id="napis">New APIs</h2>
+                  <h4 id="cbs">Cross Browser Solution</h4>
+                  
+
+                  <div style="display:none">
+                     <video id="sourcevid" autoplay="true" loop="true" width="600" height="600" mute>
+                        <source src="files/oicr.mp4" type="video/mp4">
                      </video>
-                     <pre><code data-trim>
-                        <video width="640" height="480" controls>
-                           <source src="files/big_buck_bunny_trailer.mp4" type="video/mp4">
-                              Your browser does not support the video tag
-                           </video>
-                        </code></pre>
+                     <canvas id="sourcecopy" width="900" height="700"></canvas>
+                  </div>
+                  <div id="explode">
+                     <center>
+                        <canvas id="output" width="750" height="550" onmousedown="dropBomb(event, this)"></canvas>
+                     </center>
+                  </div>
+               
+                  <pre id="videocode"><code style="margin-top: 200px" data-trim>
+&lt;video width=&quot;640&quot; height=&quot;480&quot; controls&gt;
+   &lt;source src=&quot;files/big_buck_bunny_trailer.mp4&quot; type=&quot;video/mp4&quot;&gt;
+   &lt;source src=&quot;files/big_buck_bunny_trailer.ogg&quot; type=&quot;video/ogg&quot;&gt;
+   Your browser does not support the video tag
+&lt;/video&gt;                        
+                  </code></pre>
+                  <script src="js/expload.js"></script>
 
-                     </section>
+               </section>
 
-                     <section>
-                        <h2>New APIs</h2>
-                        <h4>Interaction to the next level</h4>
-                        <div class="old">
-                           <div>The old way</div>
-                           <input type="file" id="files" name="files[]" multiple />
-                           <output id="list"></output>
-                           <script src="js/select4.js">
-                           </script>
-                        </div>
-                        <div class="new">
-                           <div>The HTML5 Way</div>
-                           <div id="drop_zone">Drop files here</div>
-                           <output id="newlist"></output>
-                           <script src="js/select5.js"></script>
-                        </div>
-
-                     </section>
-
-                     <section>
-                        <h2>New APIs</h2>
-                        <h4>Better Performance</h4>
-                        <canvas id="mycanvas">
-                           Your browser doesn't support canvas...
-                        </canvas>
-                        <br>
-                        <button id="paper_btn">drawPaper</button>
-                        <button id="gradient_btn">drawGradient</button>
-                        <button id="radial_btn">drawRadial</button>
-                        <button id="cat_btn">drawCat</button>
-                        <button id="manycat_btn">drawManyCats</button>
-                        <script src="js/canvas.js"></script>
-                     </section>
-                  </section>
+            </section>
 
                   <section>
                      <section>
