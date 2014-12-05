@@ -30,6 +30,7 @@
          document.getElementsByTagName( 'head' )[0].appendChild( link );
       }
    </script>
+   <link rel="stylesheet" href="css/mycss.css">
 
       <!--[if lt IE 9]>
       <script src="lib/js/html5shiv.js"></script>
@@ -86,7 +87,7 @@
                   </div>
                   <div class="new">
                      <div>The HTML5 Way</div>
-                     <div id="drop_zone">Drop files here</div>
+                     <div id="drop_zone">Drop files here</div><br>
                      <output id="newlist"></output>
                      <script src="js/select5.js"></script>
                   </div>
@@ -105,6 +106,9 @@
                   <button id="radial_btn">drawRadial</button>
                   <button id="cat_btn">drawCat</button>
                   <button id="manycat_btn">drawManyCats</button>
+                  <p class="fragment">Canvas with heavy graphics: <a href="http://ie.microsoft.com/testdrive/performance/fishietank/">Microsoft Fish IE Tank</a></p>
+                  <p class="fragment">Another example: <a href="http://explore.glacierworks.org/en/#everest/explore">Glacier Works</a></p>
+                  
                   <script src="js/canvas.js"></script>
                </section>
 
@@ -114,7 +118,7 @@
                   
 
                   <div style="display:none">
-                     <video id="sourcevid" autoplay="true" loop="true" width="600" height="600" mute>
+                     <video id="sourcevid" autoplay="true" loop="true" width="600" height="600" muted>
                         <source src="files/oicr.mp4" type="video/mp4">
                      </video>
                      <canvas id="sourcecopy" width="900" height="700"></canvas>
@@ -138,179 +142,149 @@
 
             </section>
 
-                  <section>
-                     <section>
-                        <h2>Semantic Web</h2>
-                        <h4>Technologies now talk: browsers and input tags</h4>
-                        <style>
-                           #tagList {
-                              list-style-type: none;
-                              font-size: 25px;
-                           }
-                           #tagList pre {
-                              margin-left: 0;
-                              width: 100%;
-                           }
-                           #tagList form {
-                              text-align: left;
-                           }
-                        </style>
+            <section>
+               <section>
+                  <h2>Semantic Web</h2>
+                  <h4>Technologies now talk: browsers and input tags</h4>
 
-                        <ul id="tagList">
-                           <li>
-                              <pre><code data-trim>
-                                 &lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;
-                              </code></pre>
-                              <form>
-                                 Email address:
-                                 <input type="email" name="email" required>
-                                 <input type="submit">
-                              </form>
-                           </li>
-                           <li>
-                              <pre><code data-trim>
-                                 &lt;input type=&quot;number&quot; name=&quot;lucky&quot; min=&quot;1&quot; max=&quot;100&quot; required&gt;
-                              </code></pre>
-                              <form>
-                                 Input your lucky number: 
-                                 <input type="number" name="lucky" min="1" max="100" required>
-                                 <input type="submit">
-                              </form>
-                           </li>
-                           <li>
-                              <pre><code data-trim>
-                                 &lt;input type=&quot;color&quot; name=&quot;favcolor&quot;&gt;
-                              </code></pre>
-                              <form>
-                                 Choose your favorite color:
-                                 <input type="color" name="favcolor" required>
-                                 <input type="submit">
-                              </form>
-                           </li>
-                           <li>
-                              <pre><code data-trim>
-                                 &lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;10&quot; name=&quot;val&quot;&gt;
-                              </code></pre>
-                              <form>
-                                 Slide a number:
-                                 <input type="range" min="0" max="10" value="0" name="val" required>
-                                 <input type="submit">
-                              </form>
-                           </li>
-                           <li> 
-                              <pre><code data-trim>
-                                 &lt;input type=&quot;date&quot; name=&quot;bday&quot;&gt;
-                              </code></pre>
-                              <form>
-                                 Input your birthday: 
-                                 <input type="date" name="bday" required>
-                                 <input type="submit">
-                              </form>
-                           </li>
-                        </ul>
-                        <script>
-                           var submits = document.querySelectorAll('#tagList input[type="submit"]');
-                           [].forEach.call(submits, function(sub) {
-                              sub.onclick = function() {
-                                 var input = sub.previousElementSibling;
-                                 var val = input.value;
-                                 var parent = sub.parentNode;
-                                 if(input.checkValidity()) {
-                              // sub.style = "visibility: hidden";
-                              parent.removeChild(sub);
-                              parent.removeChild(input);
-                              parent.innerHTML += val;
-                              return false;
-                           }
-                        }
-                     });
-                        </script>
-                     </section>
-                     <section>
-                        <h2>Semantic Web</h2>
-                        <h4>Technologies now make sense: sectioning</h4>
+                  <ul id="tagList">
+                     <li>
                         <pre><code data-trim>
+                           &lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;
+                        </code></pre>
+                        <form>
+                           Email address:
+                           <input type="email" name="email" required>
+                           <input type="submit">
+                        </form>
+                     </li>
+                     <li>
+                        <pre><code data-trim>
+                           &lt;input type=&quot;number&quot; name=&quot;lucky&quot; min=&quot;1&quot; max=&quot;100&quot; required&gt;
+                        </code></pre>
+                        <form>
+                           Input your lucky number: 
+                           <input type="number" name="lucky" min="1" max="100" required>
+                           <input type="submit">
+                        </form>
+                     </li>
+                     <li>
+                        <pre><code data-trim>
+                           &lt;input type=&quot;color&quot; name=&quot;favcolor&quot;&gt;
+                        </code></pre>
+                        <form>
+                           Choose your favorite color:
+                           <input type="color" name="favcolor" required>
+                           <input type="submit">
+                        </form>
+                     </li>
+                     <li>
+                        <pre><code data-trim>
+                           &lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;10&quot; name=&quot;val&quot;&gt;
+                        </code></pre>
+                        <form>
+                           Slide a number:
+                           <input type="range" min="0" max="10" value="0" name="val" required>
+                           <input type="submit">
+                        </form>
+                     </li>
+                     <li> 
+                        <pre><code data-trim>
+                           &lt;input type=&quot;date&quot; name=&quot;bday&quot;&gt;
+                        </code></pre>
+                        <form>
+                           Input your birthday: 
+                           <input type="date" name="bday" required>
+                           <input type="submit">
+                        </form>
+                     </li>
+                  </ul>
+                  <script>
+                     var submits = document.querySelectorAll('#tagList input[type="submit"]');
+                     [].forEach.call(submits, function(sub) {
+                        sub.onclick = function() {
+                           var input = sub.previousElementSibling;
+                           var val = input.value;
+                           var parent = sub.parentNode;
+                           if(input.checkValidity()) {
+                        // sub.style = "visibility: hidden";
+                        parent.removeChild(sub);
+                        parent.removeChild(input);
+                        parent.innerHTML += val;
+                        return false;
+                     }
+                  }
+               });
+                  </script>
+               </section>
+
+               <section>
+                  <h2>Semantic Web</h2>
+                  <h4>Technologies now make sense: sectioning</h4>
+
+                  <pre id="html4" class="old"><code class="xml" data-trim>
 &lt;div class=&quot;section&quot; id=&quot;forest-elephants&quot;&gt;
    &lt;h1&gt;Forest elephants&lt;/h1&gt;
-   &lt;p&gt;
-      In this section, we discuss the lesser known forest elephants.
-      blah blah blah
-   &lt;/p&gt;
+   &lt;p&gt;In this section, we discuss the lesser known forest elephants.&lt;/p&gt;
    &lt;div class=&quot;subsection&quot; id=&quot;forest-habitat&quot;&gt;
       &lt;h2&gt;Habitat&lt;/h2&gt;
-      &lt;p&gt;
-         Forest elephants do not live in trees but among them.
-         blah blah blah
-      &lt;/p&gt;
-      &lt;h2&gt;Diet&lt;/h2&gt;
-      &lt;p&gt;Blah blah blah&lt;/p&gt;
+      &lt;p&gt;Forest elephants do not live in trees but among them.&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;ads&quot; id=&quot;ad1&quot;&gt;
+      some ads
    &lt;/div&gt;
 &lt;/div&gt;
-                        </code></pre>
 
-                        <pre><code data-trim>
+                  </code></pre>
+
+                  <pre id="html5" class="new"><code class="xml" data-trim>
+
 &lt;section&gt;
-   &lt;h1&gt;Forest elephants&lt;/h1&gt; 
+   &lt;h1&gt;Forest elephants&lt;/h1&gt;    
+   &lt;p&gt;In this section, we discuss the lesser known forest elephants. 
    &lt;section&gt;
-      &lt;h1&gt;Introduction&lt;/h1&gt;
-      &lt;p&gt;In this section, we discuss the lesser known forest elephants.&lt;/p&gt;
-   &lt;/section&gt;
-   &lt;section&gt;
-      &lt;h1&gt;Habitat&lt;/h1&gt;
-      &lt;p&gt;Forest elephants do not live in trees but among them.&lt;/p&gt;
+      &lt;h2&gt;Habitat&lt;/h2&gt;  
+      &lt;p&gt;Forest elephants do not live in trees but among them.
    &lt;/section&gt;
    &lt;aside&gt;
-      &lt;p&gt;advertising block&lt;/p&gt;
+      some ads
    &lt;/aside&gt;
 &lt;/section&gt;
-&lt;footer&gt;
-   &lt;p&gt;(c) 2010 The Example company&lt;/p&gt;
-&lt;/footer&gt;
+
                         </code></pre>
 
-                     </section>
+               </section>
 
-                  </section>
+            </section>
 
-                  <section>
-                     <section>
-                        <h2>Local Storage</h2>
-                        <style>
-                           ::-webkit-input-placeholder { 
-                              font-size: 25px;
-                              text-align: center; 
-                           }
-                           #nols, #ls {
-                              width: 500px;
-                              height: 200px;
-                              font-size: 25px;
-                           }
-                        </style>
-                        <textarea id="nols"></textarea>
-                        <textarea id="ls"></textarea>
-                        <br>
-                        <button id="clear_btn">clear</button>
-                        <script src="js/localstorage.js"></script>
-                     </section>
+            <section>
+               <section>
+                  <h2>Local Storage</h2>
 
-                  </section>
+                  <textarea class="old" id="nols" ></textarea>
+                  <textarea class="new" id="ls"></textarea>
+                  <button id="clear_btn">clear</button>
+                  <script src="js/localstorage.js"></script>
+               </section>
+
+            </section>
 
 
 
 
 
-                  <section>
-                     <h2>The next step</h2>
-                     <p>
-                        Deployment rate: 
-                     </p>
-                     <p>
-                        HTML5DevConf
-                     </p>
-                     <p>
-                        Goal
-                     </p>
-                  </section>
+            <section>
+               <h2>The next step</h2>
+               <p>
+                  Deployment rate: 
+               </p>
+               <p>
+                  HTML5DevConf
+               </p>
+               <p>
+                  Goal
+               </p>
+            </section>
 
 
 
