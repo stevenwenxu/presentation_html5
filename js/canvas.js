@@ -33,15 +33,22 @@ function drawPaper() {
    ctx.moveTo(65, 370);
    ctx.lineTo(60, 375);
    ctx.lineTo(55, 370);
+   ctx.rect(100, 150, 100, 100);
    ctx.closePath();
    
    ctx.strokeStyle = "black";
    ctx.stroke();
    
+   ctx.beginPath();
+   ctx.arc(300, 200, 50, 0, 2*Math.PI);
+   ctx.strokeStyle = "black";
+   ctx.stroke();
+   ctx.closePath();
+
    ctx.font = "bold 12px sans-serif";
    ctx.fillText("x", 248, 43);
    ctx.fillText("y", 58, 165);
-   
+
    ctx.textBaseline = "top";
    ctx.fillText("(0, 0)", 8, 5);
    
