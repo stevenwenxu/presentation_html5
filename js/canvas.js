@@ -4,7 +4,19 @@ var ctx = canv.getContext('2d');
 canv.width = 500;
 canv.height = 375;
 
+function removeSliders() {
+   var sliders = document.getElementById('sliders');
+   if(sliders) {
+      sliders.style.display = "none";
+   }
+   var examples = canv.parentElement.querySelectorAll('p');
+   [].forEach.call(examples, function(example) {
+      example.style.display = "";
+   });
+}
+
 function drawPaper() {
+   removeSliders();
    canv.height = canv.height;
    for(var i = 0.5; i < canv.height; i += 10) {
       ctx.moveTo(0, i);
@@ -61,6 +73,7 @@ function drawPaper() {
 };
 
 function drawGradient() {
+   removeSliders();
    canv.height = canv.height;
    var grad = ctx.createLinearGradient(0, 0, canv.width, canv.height);
    grad.addColorStop(0, "#9e009e");
@@ -75,20 +88,52 @@ function drawGradient() {
 }
 
 function drawRadial () {
-   canv.height = canv.height;
-   var grad = ctx.createRadialGradient(canv.width/2, canv.height/2, canv.width/30, canv.width/2, canv.height/2, canv.width/2);
-   grad.addColorStop(0, "#9e009e");
-   grad.addColorStop(1/7, "#0000ff");
-   grad.addColorStop(2/7, "#00ffff");
-   grad.addColorStop(3/7, "#00ff00");
-   grad.addColorStop(4/7, "#ffff00");
-   grad.addColorStop(5/7, "#ff7f00");
-   grad.addColorStop(6/7, "#ff0000");
-   ctx.fillStyle = grad;
-   ctx.fillRect(0, 0, canv.width, canv.height);
+   var radialForm = document.getElementById('sliders');
+   var horizSlider = document.createElement('input');
+   var vertiSlider = document.createElement('input');
+
+
+   if(radialForm.childElementCount === 0) {
+      radialForm.appendChild(horizSlider);
+      radialForm.appendChild(vertiSlider);
+   }
+
+   horizSlider.setAttribute('type', 'range');
+   horizSlider.setAttribute('value', canv.width/2);
+   horizSlider.setAttribute('min', 1);
+   horizSlider.setAttribute('max', canv.width);
+
+   vertiSlider.setAttribute('type', 'range');
+   vertiSlider.setAttribute('value', canv.height/2);
+   vertiSlider.setAttribute('min', 1);
+   vertiSlider.setAttribute('max', canv.height);
+
+   radialForm.style.display = "";
+   var onInput = function() {
+      canv.height = canv.height;
+      var grad = ctx.createRadialGradient(horizSlider.value, vertiSlider.value, 0, canv.width/2, canv.height/2, canv.width/2);
+      grad.addColorStop(0.000, '#ffff00');
+      grad.addColorStop(0.200, '#ffff00');
+      grad.addColorStop(0.210, '#ff0000');
+      grad.addColorStop(0.400, '#ff0000');
+      grad.addColorStop(0.410, '#82C2EE');
+      grad.addColorStop(0.600, '#82C2EE');
+      grad.addColorStop(0.610, '#ffffff');
+      grad.addColorStop(0.780, '#ffffff');
+      grad.addColorStop(0.790, '#000000');
+      grad.addColorStop(0.990, '#000000');
+      grad.addColorStop(1.000, '#ffffff');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canv.width, canv.height);
+   }
+
+   onInput();
+   horizSlider.addEventListener('input', onInput);
+   vertiSlider.addEventListener('input', onInput);
 }
 
 function drawCat() {
+   removeSliders();
    canv.height = canv.height;
    var cat = new Image();
    cat.src = "files/cat.png";
@@ -98,6 +143,7 @@ function drawCat() {
 }
 
 function drawManyCats() {
+   removeSliders();
    canv.height = canv.height;
    var cat = new Image();
    cat.src = "files/cat.png";

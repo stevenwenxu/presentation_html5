@@ -110,6 +110,7 @@
    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
    background-color:#6c7c7c;
 }
+
 #clear_btn:active {
    position:relative;
    top:1px;

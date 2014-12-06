@@ -4,7 +4,7 @@
 <head>
    <meta charset="utf-8">
 
-   <title>reveal.js - The HTML Presentation Framework</title>
+   <title>HTML5: A Step Forward</title>
 
    <meta name="description" content="A presentation on HTMl5 at OICR">
    <meta name="author" content="Steven">
@@ -51,12 +51,14 @@
 
             <section>
                <h2>What is HTML5, exactly?</h2>
-               <p>
-                  HTML5 is a core technology markup language of the Internet used for structuring and presenting content for the World Wide Web.
-               </p>
-               <p>
-                  HTML5 is announced as the final and complete revision of HTML standard on October 2014.
-               </p>
+               <ul>
+                  <li class="fragment roll-in">
+                     HTML5 is a core technology <strong>markup language</strong> of the Internet used <u>for structuring and presenting content</u> for the World Wide Web.
+                  </li>
+                  <li class="fragment ">
+                     HTML5 is announced as the final and complete revision of HTML standard on October 2014.
+                  </li>
+               </ul>
 
                <aside class="notes">
                   Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
@@ -106,6 +108,7 @@
                   <button id="radial_btn">drawRadial</button>
                   <button id="cat_btn">drawCat</button>
                   <button id="manycat_btn">drawManyCats</button>
+                  <form id="sliders"></form>
                   <p class="fragment">Canvas with heavy graphics: <a href="http://ie.microsoft.com/testdrive/performance/fishietank/">Microsoft Fish IE Tank</a></p>
                   <p class="fragment">Another example: <a href="http://explore.glacierworks.org/en/#everest/explore">Glacier Works</a></p>
                   
@@ -118,7 +121,7 @@
                   
 
                   <div style="display:none">
-                     <video id="sourcevid" autoplay="true" loop="true" width="600" height="600" muted>
+                     <video id="sourcevid" autoplay="false" loop="true" width="600" height="600" muted>
                         <source src="files/oicr.mp4" type="video/mp4">
                      </video>
                      <canvas id="sourcecopy" width="900" height="700"></canvas>
