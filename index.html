@@ -43,6 +43,9 @@
 
          <!-- Any section element inside of this container is displayed as a slide -->
          <div class="slides">
+
+            <section data-background="files/wordle.jpg"></section>
+
             <section>
                <h1>HTML5<br>a step forward</h1>
                <br><br><br>
@@ -99,9 +102,7 @@
                <section>
                   <h2>New APIs</h2>
                   <h4 class="fragment highlight-red">Better Performance</h4>
-                  <canvas id="mycanvas">
-                     Your browser doesn't support canvas...
-                  </canvas>
+                  <canvas id="mycanvas"></canvas>
                   <br>
                   <button id="paper_btn">drawPaper</button>
                   <button id="gradient_btn">drawGradient</button>
@@ -178,16 +179,6 @@
                         <form>
                            Choose your favorite color:
                            <input type="color" name="favcolor" required>
-                           <input type="submit">
-                        </form>
-                     </li>
-                     <li>
-                        <pre><code data-trim>
-                           &lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;10&quot; name=&quot;val&quot;&gt;
-                        </code></pre>
-                        <form>
-                           Slide a number:
-                           <input type="range" min="0" max="10" value="0" name="val" required>
                            <input type="submit">
                         </form>
                      </li>
