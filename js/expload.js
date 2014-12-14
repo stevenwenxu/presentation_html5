@@ -10,7 +10,7 @@ var TILE_HEIGHT = 24;
 var TILE_CENTER_WIDTH = 16;
 var TILE_CENTER_HEIGHT = 12;
 var SOURCERECT = {x:0, y:0, width:0, height:0};
-var PAINTRECT = {x:0, y:0, width:1000, height:600};
+var PAINTRECT = {x:0, y:0, width:600, height:600};
 
 function init(){
    video = document.getElementById('sourcevid');
@@ -151,8 +151,8 @@ function dropBomb(evt, obj){
    var posy = 0;
    var e = evt || window.event;
    if (e.pageX || e.pageY){
-      posx = e.pageX;
-      posy = e.pageY;
+      posx = e.pageX-200;
+      posy = e.pageY-30;
    }else if (e.clientX || e.clientY) {
       posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
       posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
@@ -218,8 +218,8 @@ var videocode = document.getElementById('videocode');
 var cbs = document.getElementById('cbs');
 var vid = document.getElementById('explode');
 
-// videocode.style.width = "750px";
-videocode.style.height = "550px";
+// videocode.style.width = "404px";
+videocode.style.height = "404px";
 videocode.style["box-shadow"] = "none";
 vid.style.display = "none";
 
