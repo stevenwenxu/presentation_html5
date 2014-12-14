@@ -91,24 +91,46 @@ function drawRadial () {
    var radialForm = document.getElementById('sliders');
    var horizSlider = document.createElement('input');
    var vertiSlider = document.createElement('input');
-
+   var startBtn = document.createElement('button');
 
    if(radialForm.childElementCount === 0) {
       radialForm.appendChild(horizSlider);
       radialForm.appendChild(vertiSlider);
+      radialForm.appendChild(startBtn);
    }
 
    horizSlider.setAttribute('type', 'range');
    horizSlider.setAttribute('value', canv.width/2);
-   horizSlider.setAttribute('min', 1);
-   horizSlider.setAttribute('max', canv.width);
+   horizSlider.setAttribute('min', canv.width/8);
+   horizSlider.setAttribute('max', canv.width*7/8);
 
    vertiSlider.setAttribute('type', 'range');
    vertiSlider.setAttribute('value', canv.height/2);
-   vertiSlider.setAttribute('min', 1);
-   vertiSlider.setAttribute('max', canv.height);
+   vertiSlider.setAttribute('min', canv.height/8);
+   vertiSlider.setAttribute('max', canv.height*7/8);
+
+   startBtn.innerHTML = "Start!";
 
    radialForm.style.display = "";
+
+   var clickStart = function() {
+      var i = 1;
+      function myLoop () {
+         setTimeout(function() {
+            vertiSlider.value = Math.sin(i * Math.PI / 360) * canv.height * 2;
+            horizSlider.value = Math.sin((i+180) * Math.PI / 360) * canv.width * 2;
+            i++;
+            // onInput is not triggered when value is changed programmatically
+            onInput();
+            if(i < 360 * 20) { 
+               myLoop(); 
+            }
+         }, 3);
+      }
+      myLoop();
+   }
+
+
    var onInput = function() {
       canv.height = canv.height;
       var grad = ctx.createRadialGradient(horizSlider.value, vertiSlider.value, 0, canv.width/2, canv.height/2, canv.width/2);
@@ -130,6 +152,7 @@ function drawRadial () {
    onInput();
    horizSlider.addEventListener('input', onInput);
    vertiSlider.addEventListener('input', onInput);
+   startBtn.addEventListener('click', clickStart);
 }
 
 function drawCat() {
