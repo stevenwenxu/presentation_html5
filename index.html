@@ -46,7 +46,7 @@
 
             <section data-background="files/wordle.jpg"></section>
 
-            <section>
+            <section data-transition="linear" >
                <h1>HTML5<br>a step forward</h1>
                <br><br><br>
                <h3>Embrace the new, interactive and better Internet</h3>
@@ -83,14 +83,14 @@
                <section>
                   <h2>New APIs</h2>
                   <h4>Interaction to the next level</h4>
-                  <div class="old">
+                  <div class="old" style="margin-left: 100px">
                      <div>The old way</div>
                      <input type="file" id="files" name="files[]" multiple />
                      <output id="list"></output>
                      <script src="js/select4.js">
                      </script>
                   </div>
-                  <div class="new">
+                  <div class="new" style="margin-right: 100px">
                      <div>The HTML5 Way</div>
                      <div id="drop_zone">Drop files here</div><br>
                      <output id="newlist"></output>
@@ -106,9 +106,9 @@
                   <br>
                   <button id="paper_btn">drawPaper</button>
                   <button id="gradient_btn">drawGradient</button>
-                  <button id="radial_btn">drawRadial</button>
                   <button id="cat_btn">drawCat</button>
                   <button id="manycat_btn">drawManyCats</button>
+                  <button id="radial_btn">drawRadial</button>
                   <form id="sliders"></form>
                   <p class="fragment">Canvas with heavy graphics: <a href="http://ie.microsoft.com/testdrive/performance/fishietank/">Microsoft Fish IE Tank</a></p>
                   <p class="fragment">Another example: <a href="http://explore.glacierworks.org/en/#everest/explore">Glacier Works</a></p>
@@ -120,16 +120,18 @@
                   <h2 id="napis">New APIs</h2>
                   <h4 id="cbs">Cross Browser Solution</h4>
                   
-
                   <div style="display:none">
-                     <video id="sourcevid" autoplay="false" loop="true" width="600" height="600" muted>
+                     <video id="sourcevid" autoplay="false" loop="true" muted >
                         <source src="files/oicr.mp4" type="video/mp4">
                      </video>
-                     <canvas id="sourcecopy" width="900" height="700"></canvas>
+                     <canvas id="sourcecopy" width="404" height="404"></canvas>
                   </div>
+
                   <div id="explode">
                      <center>
-                        <canvas id="output" width="750" height="550" onmousedown="dropBomb(event, this)"></canvas>
+                        <div style="z-index:1;position:relative;text-align:center;font-size:16px;font-weight:bold;width:1000px;top:60px;">Code from <a href="http://craftymind.com/factory/html5video/CanvasVideo.html">craftymind.com</a></div>
+                        <canvas id="output" width="600" height="600" onmousedown="dropBomb(event, this)" style="border: solid 5px #666666">
+                        </canvas>
                      </center>
                   </div>
                
@@ -298,66 +300,6 @@
                      </p>
                   </section>
 
-                  <section id="themes">
-                     <h2>Themes</h2>
-                     <p>
-                        Reveal.js comes with a few themes built in: <br>
-                        <a href="?#/themes">Default</a> -
-                        <a href="?theme=sky#/themes">Sky</a> -
-                        <a href="?theme=beige#/themes">Beige</a> -
-                        <a href="?theme=simple#/themes">Simple</a> -
-                        <a href="?theme=serif#/themes">Serif</a> -
-                        <a href="?theme=night#/themes">Night</a> <br>
-                        <a href="?theme=moon#/themes">Moon</a> -
-                        <a href="?theme=solarized#/themes">Solarized</a>
-                     </p>
-                     <p>
-                        <small>
-                           * Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
-                        </small>
-                     </p>
-                  </section>
-
-                  <section>
-                     <h2>Global State</h2>
-                     <p>
-                        Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-                        will be added as a class to the document element when the slide is open. This lets you
-                        apply broader style changes, like switching the background.
-                     </p>
-                  </section>
-
-                  <section data-state="customevent">
-                     <h2>Custom Events</h2>
-                     <p>
-                        Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-                     </p>
-                     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
-                        Reveal.addEventListener( 'customevent', function() {
-                        console.log( '"customevent" has fired' );
-                     } );
-                  </code></pre>
-               </section>
-
-               <section>
-                  <section data-background="#007777">
-                     <h2>Slide Backgrounds</h2>
-                     <p>
-                        Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
-                     </p>
-                     <a href="#" class="image navigate-down">
-                        <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-                     </a>
-                  </section>
-                  <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
-                     <h2>Image Backgrounds</h2>
-                     <pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-                  </section>
-                  <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
-                     <h2>Repeated Image Backgrounds</h2>
-                     <pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-                  </section>
-               </section>
 
                <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
                   <h2>Background Transitions</h2>
@@ -371,18 +313,6 @@
                   <p>
                      You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
                   </p>
-               </section>
-
-               <section>
-                  <h2>Clever Quotes</h2>
-                  <p>
-                     These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-                     &ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-                  </p>
-                  <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-                     &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-                     reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-                  </blockquote>
                </section>
 
 
@@ -414,13 +344,6 @@
                      <p class="fragment current-visible">current-visible</p>
                      <p class="fragment highlight-current-blue">highlight-current-blue</p>
                   </section>
-               </section>
-
-
-
-               <section>
-                  <h1>THE END</h1>
-                  <h3>BY Hakim El Hattab / hakim.se</h3>
                </section>
 
             </div>
