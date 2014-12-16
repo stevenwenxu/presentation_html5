@@ -5,8 +5,8 @@ var copy;
 var copycanvas;
 var draw;
 
-var TILE_WIDTH = 32;
-var TILE_HEIGHT = 24;
+var TILE_WIDTH = 25;
+var TILE_HEIGHT = 18;
 var TILE_CENTER_WIDTH = 16;
 var TILE_CENTER_HEIGHT = 12;
 var SOURCERECT = {x:0, y:0, width:0, height:0};
@@ -128,7 +128,7 @@ function explode(x, y){
       var ydiff = tile.currentY-y;
       var dist = Math.sqrt(xdiff*xdiff + ydiff*ydiff);
       
-      var randRange = 220+(Math.random()*30);
+      var randRange = 150+(Math.random()*30);
       var range = randRange-dist;
       var force = 3*(range/randRange);
       if(force > tile.force){
