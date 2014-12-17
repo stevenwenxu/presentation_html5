@@ -30,6 +30,8 @@
          document.getElementsByTagName( 'head' )[0].appendChild( link );
       }
    </script>
+   <script src="lib/js/jquery.min.js"></script>
+   <script src="lib/js/typed.js"></script>
    <link rel="stylesheet" href="css/mycss.css">
 
       <!--[if lt IE 9]>
@@ -54,14 +56,9 @@
 
             <section>
                <h2>What is HTML5, exactly?</h2>
-               <ul>
-                  <li class="fragment roll-in">
-                     HTML5 is a core technology <strong>markup language</strong> of the Internet used <u>for structuring and presenting content</u> for the World Wide Web.
-                  </li>
-                  <li class="fragment ">
-                     HTML5 is announced as the final and complete revision of HTML standard on October 2014.
-                  </li>
-               </ul>
+               <div class="fragment roll-in">
+                  HTML5 is a core technology <strong>markup language</strong> of the Internet used <u>for structuring and presenting content</u> for the World Wide Web.
+               </div>
 
                <aside class="notes">
                   Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
@@ -105,9 +102,9 @@
                   <canvas id="mycanvas"></canvas>
                   <br>
                   <button id="paper_btn">drawPaper</button>
-                  <button id="gradient_btn">drawGradient</button>
                   <button id="cat_btn">drawCat</button>
                   <button id="manycat_btn">drawManyCats</button>
+                  <button id="gradient_btn">drawGradient</button>
                   <button id="radial_btn">drawRadial</button>
                   <form id="sliders"></form>
                   <p class="fragment">Canvas with heavy graphics: <a href="http://ie.microsoft.com/testdrive/performance/fishietank/">Microsoft Fish IE Tank</a></p>
@@ -265,95 +262,43 @@
 
             </section>
 
-
-
-
-
             <section>
-               <h2>The next step</h2>
-               <p class="fragment">
-                  Deployment rate
-               </p>
-               <p class="fragment">
-                  HTML5DevConf
-               </p>
-               <p class="fragment">
-                  Goal
-               </p>
+               <h2>The vision</h2>
+               <ul>
+                  <li class="fragment" class="conf">
+                     <!-- <span id="conf"></span> -->
+                     HTML5DevConf: HTML5 was finally announced final and complete - 51 days ago
+                  </li>
+                  <li class="fragment" style="margin-top: 20px">
+                     42% of 10,000 developers surveyed by 2014 Vision Mobile is already using HTML5 to build apps.
+                  </li>
+                  <li class="fragment" style="margin-top: 20px">
+                     Promise: Write once, deploy anywhere - lowering the cost of developing powerful, cross-platform applications.
+                  </li>
+               <!--
+               <script>
+                  function startTyping1 () {
+                     $("#conf").typed({
+                        strings: ["HTML5DevConf: HTML5 was finally announced final and complete ^3000  - 51 days ago"]
+                     });
+                  }
+                  startTyping1();
+               </script>
+               -->
             </section>
 
-
-
-
-                  <section id="transitions">
-                     <h2>Transition Styles</h2>
-                     <p>
-                        You can select from different transitions, like: <br>
-                        <a href="?transition=cube#/transitions">Cube</a> -
-                        <a href="?transition=page#/transitions">Page</a> -
-                        <a href="?transition=concave#/transitions">Concave</a> -
-                        <a href="?transition=zoom#/transitions">Zoom</a> -
-                        <a href="?transition=linear#/transitions">Linear</a> -
-                        <a href="?transition=fade#/transitions">Fade</a> -
-                        <a href="?transition=none#/transitions">None</a> -
-                        <a href="?#/transitions">Default</a>
-                     </p>
-                  </section>
-
-
-               <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
-                  <h2>Background Transitions</h2>
-                  <p>
-                     Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
-                  </p>
-               </section>
-
-               <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
-                  <h2>Background Transition Override</h2>
-                  <p>
-                     You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
-                  </p>
-               </section>
-
-
-               <section>
-                  <section id="fragments">
-                     <h2>Fragmented Views</h2>
-                     <p>Hit the next arrow...</p>
-                     <p class="fragment">... to step through ...</p>
-                     <ol>
-                        <li class="fragment"><code>any type</code></li>
-                        <li class="fragment"><em>of view</em></li>
-                        <li class="fragment"><strong>fragments</strong></li>
-                     </ol>
-
-                     <aside class="notes">
-                        This slide has fragments which are also stepped through in the notes window.
-                     </aside>
-                  </section>
-                  <section>
-                     <h2>Fragment Styles</h2>
-                     <p>There's a few styles of fragments, like:</p>
-                     <p class="fragment grow">grow</p>
-                     <p class="fragment shrink">shrink</p>
-                     <p class="fragment roll-in">roll-in</p>
-                     <p class="fragment fade-out">fade-out</p>
-                     <p class="fragment highlight-red">highlight-red</p>
-                     <p class="fragment highlight-green">highlight-green</p>
-                     <p class="fragment highlight-blue">highlight-blue</p>
-                     <p class="fragment current-visible">current-visible</p>
-                     <p class="fragment highlight-current-blue">highlight-current-blue</p>
-                  </section>
-               </section>
-
-            </div>
+            <section>
+               <h2>Thank you</h2>
+            </section>
 
          </div>
 
-         <script src="lib/js/head.min.js"></script>
-         <script src="js/reveal.min.js"></script>
+      </div>
 
-         <script>
+      <script src="lib/js/head.min.js"></script>
+      <script src="js/reveal.min.js"></script>
+
+      <script>
 
          // Full list of configuration options available here:
          // https://github.com/hakimel/reveal.js#configuration
@@ -388,7 +333,7 @@
             ]
          });
 
-</script>
+      </script>
 
-</body>
+   </body>
 </html>
