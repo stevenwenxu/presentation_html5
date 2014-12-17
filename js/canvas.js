@@ -122,7 +122,7 @@ function drawRadial () {
             i++;
             // onInput is not triggered when value is changed programmatically
             onInput();
-            if(i < 360 * 20) { 
+            if(i < 360 * 6) { 
                myLoop(); 
             }
          }, 3);
