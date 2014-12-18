@@ -350,23 +350,27 @@
                      strings: ["HTML5 is a core technology <strong>markup language</strong> of the Internet used <u>for structuring and presenting content</u> for the World Wide Web."],
                      callback: function() {
                         $('.typed-cursor').hide();
-                     }
+                     },
+                     contentType: 'html'
                   });
                },
                49: function() { 
                   $('#vision1').typed({
-                     strings: ["HTML5DevConf: HTML5 was finally announced final and complete ^1000 - <span id='days'>0</span> days ago"],
+                     strings: ["HTML5DevConf: HTML5 was finally announced final and complete ^1000 - <span id='days0'>9</span><span id='days1'>9</span> days ago"],
                      callback: function() {
-                        countto(51, '#days');
+                        countto(5, '#days0');
+                        countto(1, '#days1');
                         $('.typed-cursor').hide();
-                     }
+                     },
+                     contentType: 'html'
                   });
                },
                50: function() {
                   $('#vision2').typed({
-                     strings: ["<span id='percent'>0</span>% of 10,000 developers surveyed by 2014 Vision Mobile is already using HTML5 to build apps."],
+                     strings: ["<span id='percent1'>9</span><span id='percent2'>9</span>% of 10,000 developers surveyed by 2014 Vision Mobile is already using HTML5 to build apps."],
                      callback: function() {
-                        countto(42, '#percent');
+                        countto(4, '#percent1');
+                        countto(2, '#percent2');
                         $('.typed-cursor').hide();
                      }
                   });
